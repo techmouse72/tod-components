@@ -1,93 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Throne of Darkness Components</title>
-<style>
-body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#f5f5f5; margin:0; padding:10px;}
-h1 { text-align:center; color:#004080; }
-input[type="text"] { width:100%; padding:8px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
-.component-card { background:#fff; margin:6px 0; padding:12px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1); }
-h2 { margin:0 0 4px 0; font-size:1.1em; color:#0066cc; }
-p { margin:2px 0; }
-@media(min-width:600px){ body{ max-width:600px; margin:auto; } }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Throne of Darkness Components</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background: #f9f9f9;
+      color: #222;
+    }
+    h1 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 0.9em;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: left;
+    }
+    th {
+      background: #eee;
+      position: sticky;
+      top: 0;
+    }
+    tr:nth-child(even) {
+      background: #fdfdfd;
+    }
+  </style>
 </head>
 <body>
-<h1>Throne of Darkness Components</h1>
-<input type="text" id="searchBox" placeholder="Search components..." onkeyup="filterComponents()">
-
-<!-- Components -->
-<div class="component-card">
-  <h2>Gaki Bones</h2>
-  <p><strong>Type:</strong> Armor</p>
-  <p><strong>Effect:</strong> Increases armor defense</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<div class="component-card">
-  <h2>Hair Pain</h2>
-  <p><strong>Type:</strong> Weapon</p>
-  <p><strong>Effect:</strong> Adds life-stealing ability</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<div class="component-card">
-  <h2>Kappa Blood</h2>
-  <p><strong>Type:</strong> Armor/Weapon</p>
-  <p><strong>Effect:</strong> Boosts defense and attack slightly</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<div class="component-card">
-  <h2>Kenjya Stone</h2>
-  <p><strong>Type:</strong> Armor/Weapon</p>
-  <p><strong>Effect:</strong> Increases special effect of inserted component</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<div class="component-card">
-  <h2>Quartz</h2>
-  <p><strong>Type:</strong> Booster</p>
-  <p><strong>Effect:</strong> Boosts fire-element components</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<div class="component-card">
-  <h2>Mercury</h2>
-  <p><strong>Type:</strong> Booster</p>
-  <p><strong>Effect:</strong> Boosts water-element components</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<div class="component-card">
-  <h2>Silver</h2>
-  <p><strong>Type:</strong> Booster</p>
-  <p><strong>Effect:</strong> Boosts lightning-element components</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<div class="component-card">
-  <h2>Sulphur</h2>
-  <p><strong>Type:</strong> Booster</p>
-  <p><strong>Effect:</strong> Boosts earth-element components</p>
-  <p><strong>Slots:</strong> 1</p>
-</div>
-
-<!-- Add more components here following the same pattern -->
-
-<script>
-function filterComponents(){
-  var input = document.getElementById("searchBox").value.toLowerCase();
-  var cards = document.getElementsByClassName("component-card");
-  for(var i=0;i<cards.length;i++){
-    var card = cards[i];
-    var text = card.innerText.toLowerCase();
-    card.style.display = text.includes(input) ? "" : "none";
-  }
-}
-</script>
-
+  <h1>Throne of Darkness Components</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Slots</th>
+        <th>Use</th>
+        <th>Effects / Parts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Debu blubber (Earth)</td><td>4</td><td>Weapon</td><td>+5 Strength; 5% Life Leech; 10% Knockback; Increased Durability (low)</td></tr>
+      <tr><td>Guardian dragon wings (Earth)</td><td>4</td><td>Armor</td><td>+10% Fire Resist; -5% Water Resist; +10% Lightning Resist</td></tr>
+      <tr><td>Oni bones (Earth)</td><td>2</td><td>Armor</td><td>+5 Vitality; Increased Durability (low)</td></tr>
+      <tr><td>Oni claw (Earth)</td><td>2</td><td>Weapon</td><td>+5 Strength; +1–5 Earth Damage</td></tr>
+      <tr><td>Scorpion dragon stinger (Earth)</td><td>2</td><td>Weapon</td><td>+1 Poison Damage</td></tr>
+      <tr><td>Jade (Earth)</td><td>2</td><td>Armor</td><td>3% Damage Reflection</td></tr>
+      <tr><td>Forest Oni ichor (Earth)</td><td>4</td><td>Armor</td><td>+5% Fire Resist; +5% Earth Resist</td></tr>
+      <tr><td>Green soul shard (Earth)</td><td>1</td><td>Weapon</td><td>+1–3 Earth Damage</td></tr>
+      <tr><td>Purple kappa egg (Earth)</td><td>4</td><td>Weapon</td><td>50% Knockback Chance</td></tr>
+      <tr><td>Blue soul shard (Water)</td><td>1</td><td>Armor</td><td>+5 Health</td></tr>
+      <tr><td>Oni fangs (Water)</td><td>2</td><td>Weapon</td><td>5% Life Leech</td></tr>
+      <tr><td>Gold soul shard (Water)</td><td>1</td><td>Both</td><td>+15% Extra Gold</td></tr>
+      <tr><td>Yama Inu pelt (Water)</td><td>4</td><td>Armor</td><td>Enhanced AC (low); +5% Water Resist; +5% Earth Resist</td></tr>
+      <tr><td>Hairpin (Water)</td><td>2</td><td>Weapon</td><td>5% Life Leech</td></tr>
+      <tr><td>Pearl (Water)</td><td>4</td><td>Weapon</td><td>8% Chance to Freeze Target</td></tr>
+      <tr><td>Kappa claw (Water)</td><td>3</td><td>Weapon</td><td>+5 Strength; 5% Knockback Chance</td></tr>
+      <tr><td>Elder kappa shell (Water)</td><td>6</td><td>Armor</td><td>Increased Durability (low); Enhanced AC (low); +5% Fire Resist; +10% Water Resist; -10% Lightning Resist</td></tr>
+      <tr><td>Red kappa egg (Water)</td><td>4</td><td>Weapon</td><td>50% Freeze Chance</td></tr>
+      <tr><td>Cho-Gokin ore (Lightning)</td><td>4</td><td>Armor</td><td>Enhanced AC (low)</td></tr>
+      <tr><td>Ghost armour plates (Lightning)</td><td>6</td><td>Armor</td><td>Enhanced AC (mid); Enhanced Durability (mid)</td></tr>
+      <tr><td>Guardian dragon skin (Lightning)</td><td>4</td><td>Armor</td><td>Indestructible; 5% Damage Reflection</td></tr>
+      <tr><td>Forest Oni horn (Lightning)</td><td>2</td><td>Weapon</td><td>+1–5 Lightning Damage</td></tr>
+      <tr><td>Spider witch cobweb (Lightning)</td><td>2</td><td>Armor</td><td>+5% Reflect Damage; Increased Durability (low)</td></tr>
+      <tr><td>Tengu feather (Lightning)</td><td>2</td><td>Both</td><td>+5 Dexterity</td></tr>
+      <tr><td>Purple soul shard (Lightning)</td><td>1</td><td>Weapon</td><td>+5 Weapon Skill</td></tr>
+      <tr><td>Gaki bones (Lightning)</td><td>1</td><td>Armor</td><td>Increased Durability (low); Enhanced AC (low)</td></tr>
+      <tr><td>Kappa blood (Fire)</td><td>—</td><td>Both</td><td>+5 Strength; +5 Vitality</td></tr>
+      <tr><td>Yama inu blood (Fire)</td><td>4</td><td>Both</td><td>5% Magic Leech; +5 Ki</td></tr>
+      <tr><td>Coral (Fire)</td><td>4</td><td>Weapon</td><td>+1–3 Fire Damage; +1–3 Water Damage</td></tr>
+      <tr><td>Red soul stone (Fire)</td><td>1</td><td>Armor</td><td>+5 Ki</td></tr>
+      <tr><td>Guardian dragon head (Fire)</td><td>4</td><td>Weapon</td><td>+2–5 Fire Damage; +2–5 Lightning Damage</td></tr>
+      <tr><td>Magma sphere (Fire)</td><td>1</td><td>Weapon</td><td>+1–10 Fire Damage; +1–10 Earth Damage</td></tr>
+      <tr><td>Winged serpent scales (Fire)</td><td>2</td><td>Armor</td><td>+10% Fire Resist; +10% Lightning Resist; +10% Earth Resist; +10% Lightning Resist</td></tr>
+    </tbody>
+  </table>
 </body>
 </html>
