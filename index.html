@@ -1,105 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Throne of Darkness Item List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #1b1b1b;
-      color: #f5f5f5;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #ffcc00;
-    }
-    input {
-      display: block;
-      margin: 0 auto 20px;
-      padding: 10px;
-      width: 80%;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-    }
-    .item {
-      background: #2a2a2a;
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 8px;
-      box-shadow: 0 0 5px #000;
-    }
-    .item h2 {
-      margin: 0;
-      color: #ff9966;
-    }
-    .type {
-      font-weight: bold;
-      color: #99ccff;
-    }
-    .effect {
-      margin: 4px 0;
-    }
-    .slots {
-      color: #cccccc;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Throne of Darkness Components</title>
+<style>
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#f5f5f5; margin:0; padding:10px;}
+h1 { text-align:center; color:#004080; }
+input[type="text"] { width:100%; padding:8px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
+.component-card { background:#fff; margin:6px 0; padding:12px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1); }
+h2 { margin:0 0 4px 0; font-size:1.1em; color:#0066cc; }
+p { margin:2px 0; }
+@media(min-width:600px){ body{ max-width:600px; margin:auto; } }
+</style>
 </head>
 <body>
-  <h1>Throne of Darkness Items</h1>
-  <input type="text" id="searchBox" placeholder="Search items...">
+<h1>Throne of Darkness Components</h1>
+<input type="text" id="searchBox" placeholder="Search components..." onkeyup="filterComponents()">
 
-  <div id="items"></div>
+<!-- Components -->
+<div class="component-card">
+  <h2>Gaki Bones</h2>
+  <p><strong>Type:</strong> Armor</p>
+  <p><strong>Effect:</strong> Increases armor defense</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
 
-  <script>
-    const items = [
-      { name: "Gaki Bones", type: "Armor", effect: "Increases armor defense", slots: 1 },
-      { name: "Hair Pain", type: "Weapon", effect: "Adds life-stealing ability", slots: 1 },
-      { name: "Red Soul Shard", type: "Special", effect: "Used to forge powerful weapons", slots: 0 },
-      { name: "Dragon Head (Fire)", type: "Artifact", effect: "Summons a fire dragon attack", slots: 1 },
-      { name: "Dragon Head (Water)", type: "Artifact", effect: "Summons a water dragon attack", slots: 1 },
-      { name: "Dragon Head (Earth)", type: "Artifact", effect: "Summons an earth dragon attack", slots: 1 },
-      { name: "Dragon Head (Wind)", type: "Artifact", effect: "Summons a wind dragon attack", slots: 1 },
-      { name: "Dragon Head (Lightning)", type: "Artifact", effect: "Summons a lightning dragon attack", slots: 1 },
-      { name: "Dragon Head (Void)", type: "Artifact", effect: "Summons a void dragon attack", slots: 1 },
-      { name: "Black Fang", type: "Weapon", effect: "Chance of instant kill", slots: 1 },
-      { name: "Oni Gauntlet", type: "Armor", effect: "Boosts attack power", slots: 1 },
-      { name: "Mask of Shadows", type: "Helmet", effect: "Increases stealth and evasion", slots: 1 },
-      { name: "Demon Hide", type: "Armor", effect: "Resistance to elemental attacks", slots: 2 },
-      { name: "Spirit Stone", type: "Special", effect: "Restores health and mana", slots: 0 },
-      { name: "Blood Katana", type: "Weapon", effect: "High damage with self-healing on hit", slots: 2 },
-      { name: "Storm Amulet", type: "Accessory", effect: "Boosts lightning magic", slots: 1 },
-      { name: "Phoenix Feather", type: "Special", effect: "Revives a fallen samurai", slots: 0 },
-      { name: "Shadow Boots", type: "Armor", effect: "Increases movement speed", slots: 1 },
-      { name: "Obsidian Blade", type: "Weapon", effect: "Armor-piercing strikes", slots: 2 },
-      { name: "Golden Soul Shard", type: "Special", effect: "Required for final forging", slots: 0 }
-    ];
+<div class="component-card">
+  <h2>Hair Pain</h2>
+  <p><strong>Type:</strong> Weapon</p>
+  <p><strong>Effect:</strong> Adds life-stealing ability</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
 
-    function displayItems(filter = "") {
-      const container = document.getElementById("items");
-      container.innerHTML = "";
-      items
-        .filter(item => item.name.toLowerCase().includes(filter.toLowerCase()))
-        .forEach(item => {
-          container.innerHTML += `
-            <div class="item">
-              <h2>${item.name}</h2>
-              <div class="type">Type: ${item.type}</div>
-              <div class="effect">Effect: ${item.effect}</div>
-              <div class="slots">Slots: ${item.slots}</div>
-            </div>
-          `;
-        });
-    }
+<div class="component-card">
+  <h2>Kappa Blood</h2>
+  <p><strong>Type:</strong> Armor/Weapon</p>
+  <p><strong>Effect:</strong> Boosts defense and attack slightly</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
 
-    document.getElementById("searchBox").addEventListener("input", (e) => {
-      displayItems(e.target.value);
-    });
+<div class="component-card">
+  <h2>Kenjya Stone</h2>
+  <p><strong>Type:</strong> Armor/Weapon</p>
+  <p><strong>Effect:</strong> Increases special effect of inserted component</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
 
-    displayItems();
-  </script>
+<div class="component-card">
+  <h2>Quartz</h2>
+  <p><strong>Type:</strong> Booster</p>
+  <p><strong>Effect:</strong> Boosts fire-element components</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
+
+<div class="component-card">
+  <h2>Mercury</h2>
+  <p><strong>Type:</strong> Booster</p>
+  <p><strong>Effect:</strong> Boosts water-element components</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
+
+<div class="component-card">
+  <h2>Silver</h2>
+  <p><strong>Type:</strong> Booster</p>
+  <p><strong>Effect:</strong> Boosts lightning-element components</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
+
+<div class="component-card">
+  <h2>Sulphur</h2>
+  <p><strong>Type:</strong> Booster</p>
+  <p><strong>Effect:</strong> Boosts earth-element components</p>
+  <p><strong>Slots:</strong> 1</p>
+</div>
+
+<!-- Add more components here following the same pattern -->
+
+<script>
+function filterComponents(){
+  var input = document.getElementById("searchBox").value.toLowerCase();
+  var cards = document.getElementsByClassName("component-card");
+  for(var i=0;i<cards.length;i++){
+    var card = cards[i];
+    var text = card.innerText.toLowerCase();
+    card.style.display = text.includes(input) ? "" : "none";
+  }
+}
+</script>
+
 </body>
 </html>
-
- 
